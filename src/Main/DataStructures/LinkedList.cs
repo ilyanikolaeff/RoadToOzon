@@ -8,6 +8,10 @@ namespace Main.DataStructures
         private Node<T>? _tail;
         private int _count;
 
+        /// <summary>
+        /// Добавление элемента в список
+        /// </summary>
+        /// <param name="value">Значение элемента</param>
         public void Add(T value)
         {
             // Создаем новый элемент, который будем добавлять
@@ -25,6 +29,11 @@ namespace Main.DataStructures
             _count++;
         }
 
+        /// <summary>
+        /// Удаление элемента из списк
+        /// </summary>
+        /// <param name="value">Удаляемый элемент</param>
+        /// <returns>true - элемент удалось найти, false - эдемент не найден</returns>
         public bool Remove(T value)
         {
             Node<T>? current = _head;
@@ -65,9 +74,19 @@ namespace Main.DataStructures
             return false;
         }
 
+        /// <summary>
+        /// Количество элементов в списке
+        /// </summary>
         public int Count => _count;
+
+        /// <summary>
+        /// Флаг содержит ли список элементы
+        /// </summary>
         public bool IsEmpty => _count == 0;
 
+        /// <summary>
+        /// Очистить список
+        /// </summary>
         public void Clear()
         {
             _head = null;
@@ -75,7 +94,11 @@ namespace Main.DataStructures
             _count = 0;
         }
 
-        // содержит ли список элемент
+        /// <summary>
+        /// Проверка содержит ли список такой элемент
+        /// </summary>
+        /// <param name="value">Проверяемое значени</param>
+        /// <returns></returns>
         public bool Contains(T value)
         {
             Node<T>? current = _head;
@@ -88,7 +111,10 @@ namespace Main.DataStructures
             return false;
         }
 
-        // добвление в начало
+        /// <summary>
+        /// Добавление элемента в начало списка
+        /// </summary>
+        /// <param name="data"></param>
         public void AppendFirst(T data)
         {
             Node<T> node = new Node<T>(data);
